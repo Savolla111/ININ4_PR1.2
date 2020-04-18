@@ -27,5 +27,13 @@ public class Main {
         System.out.println(me.pet.species);
 
 
+        Animal cat = new Animal("cat");
+        cat.feed();
+        for (int i=10; i<14;i++)
+        {
+            cat.takeForAWalk();
+        }
+        cat.feed();
+
     }
 }

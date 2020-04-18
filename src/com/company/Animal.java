@@ -8,6 +8,7 @@ public class Animal {
     File pic;
     private Double weight;
 
+
     public Animal(String species) {
         this.species = species;
         if (species == "Dog") {
@@ -21,7 +22,23 @@ public class Animal {
     }
 
     void feed() {
-        weight += 0.1;
-        System.out.println("Thx bro, my weight is now " + weight);
+        if (weight <= 0)
+        {
+            System.out.println("U can't feed dead pet");
+        } else {
+            weight += 0.1;
+            System.out.println("Thx bro, my weight is now " + weight);
+        }
     }
+
+    void takeForAWalk() {
+        if (weight <= 0) {
+            System.out.println("U can't go for a walk with dead pet");
+        } else {
+            weight -= 1;
+            System.out.println("Thx for a walk, my weight is now " + weight);
+        }
+    }
+
+
 }
