@@ -29,11 +29,13 @@ public class Main {
 
         Animal cat = new Animal("cat");
         cat.feed();
-        for (int i=10; i<14;i++)
-        {
+        for (int i = 10; i < 14; i++) {
             cat.takeForAWalk();
         }
         cat.feed();
+
+        Car car = new Car("Focus", "Ford");
+        me.car = car;
 
     }
 }

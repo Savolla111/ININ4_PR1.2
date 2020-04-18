@@ -22,8 +22,7 @@ public class Animal {
     }
 
     void feed() {
-        if (weight <= 0)
-        {
+        if (weight <= 0) {
             System.out.println("U can't feed dead pet");
         } else {
             weight += 0.1;
