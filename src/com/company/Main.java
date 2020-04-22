@@ -36,6 +36,5 @@ public class Main {
 
         Car car = new Car("Focus", "Ford");
         me.car = car;
-
     }
 }
