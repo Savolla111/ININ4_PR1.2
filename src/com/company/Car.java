@@ -3,10 +3,11 @@ package com.company;
 public class Car {
     String color;
     final String model;
-    final String producent;
+    final String producer;
+    public Double value = 10000.0;
 
-    public Car(String model, String producent) {
+    public Car(String model, String producer) {
         this.model = model;
-        this.producent = producent;
+        this.producer = producer;
     }
 }
