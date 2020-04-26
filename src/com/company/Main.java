@@ -36,5 +36,8 @@ public class Main {
 
         Car car = new Car("Focus", "Ford");
         me.car = car;
+
+        me.setSalary(3500.0);
+        System.out.println("Your salary after increase " + me.getSalary() +" New data has been sent to the accounting system ,remember to pick up the annex from the contract and do not hide the income zus already knows.");
     }
 }
