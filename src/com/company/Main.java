@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.devices.Car;
+import com.company.devices.Phone;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -40,7 +43,15 @@ public class Main {
         me.setCar(new Car("Ford", "Focus"));
         System.out.println(me.getCar().model + " " + me.getCar().producer);
 
+        Phone phone = new Phone("X","Apple",5.8);
+
+        Car car = new Car("Focus","Ford");
+
         System.out.println(dog);
         System.out.println(me);
+
+        car.turnOn();
+        phone.turnOn();
+
     }
 }

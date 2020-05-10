@@ -6,7 +6,7 @@ public class Animal {
     final String species;
     String name;
     File pic;
-    private Double weight;
+    protected Double weight;
 
 
     public Animal(String species) {

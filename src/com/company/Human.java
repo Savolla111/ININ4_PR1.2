@@ -1,8 +1,9 @@
 package com.company;
 
-import java.util.Date;
+import com.company.devices.Car;
+import com.company.devices.Phone;
 
-public class Human {
+public class Human extends Animal {
     String firstName;
     String lastName;
     Phone phone;
@@ -42,4 +43,10 @@ public class Human {
     public String toString(){
         return this.firstName + " " + this.lastName;
     }
+
+    public Human() {
+        super("homo sapiens");
+        this.weight = 80.0;
+    }
+
 }
