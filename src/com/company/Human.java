@@ -38,4 +38,8 @@ public class Human {
             System.out.println("Sorry, find better job if you want car");
         }
     }
+
+    public String toString(){
+        return this.firstName + " " + this.lastName;
+    }
 }

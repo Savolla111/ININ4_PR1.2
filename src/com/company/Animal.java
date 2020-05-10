@@ -39,5 +39,8 @@ public class Animal {
         }
     }
 
+    public String toString() {
+        return this.species + " " + this.name;
+    }
 
 }

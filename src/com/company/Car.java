@@ -10,4 +10,8 @@ public class Car {
         this.model = model;
         this.producer = producer;
     }
+
+    public String toString() {
+        return "Car " + this.producer + " " + this.model + " " + this.color;
+    }
 }

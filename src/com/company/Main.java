@@ -39,5 +39,8 @@ public class Main {
 
         me.setCar(new Car("Ford", "Focus"));
         System.out.println(me.getCar().model + " " + me.getCar().producer);
+
+        System.out.println(dog);
+        System.out.println(me);
     }
 }
