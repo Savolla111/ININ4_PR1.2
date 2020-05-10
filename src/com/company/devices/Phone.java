@@ -1,6 +1,9 @@
 package com.company.devices;
 
-public class Phone extends Device {
+import com.company.Human;
+import com.company.Saleable;
+
+public class Phone extends Device implements Saleable{
     Double screenSize;
 
     public Phone(String model, String producer, double screenSize) {
@@ -13,5 +16,18 @@ public class Phone extends Device {
     }
     public void turnOn() {
         System.out.println("turn on Phone");
+    }
+
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        try {
+            super.sell(seller, buyer, price);
+
+            buyer.phone = this;
+            if (seller.phone == this) {
+                seller.phone = null;
+            }
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }

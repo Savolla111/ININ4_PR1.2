@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Saleable {
     final String species;
     String name;
     File pic;
@@ -43,4 +43,21 @@ public class Animal {
         return this.species + " " + this.name;
     }
 
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("no way");
+        } else {
+            if (buyer.cash >= price) {
+                seller.cash += price;
+                buyer.cash -= price;
+                buyer.pet = this;
+                if (seller.pet == this) {
+                    seller.pet = null;
+                }
+                System.out.println(buyer.firstName + " bought " + this.toString() + " from " + seller.firstName + " for " + price);
+            } else {
+                throw new Exception("sorry, you have not enough money");
+            }
+        }
+    }
 }

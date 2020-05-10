@@ -5,7 +5,7 @@ import com.company.devices.Phone;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Animal dog = new Animal("Dog");
         dog.name = "Szarik";
@@ -52,6 +52,19 @@ public class Main {
 
         car.turnOn();
         phone.turnOn();
+
+        Human friend = new Human();
+        friend.setSalary(1000.0);
+        friend.firstName = "Jan";
+        friend.lastName = "Nowak";
+
+        cat.sell(me, friend, 999.0);
+
+        System.out.println(me.getCar());
+        System.out.println(me.cash);
+        System.out.println(friend.getCar());
+        System.out.println(friend.cash);
+
 
     }
 }

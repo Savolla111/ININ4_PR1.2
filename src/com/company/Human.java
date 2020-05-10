@@ -4,12 +4,14 @@ import com.company.devices.Car;
 import com.company.devices.Phone;
 
 public class Human extends Animal {
-    String firstName;
-    String lastName;
-    Phone phone;
-    Animal pet;
+    public String firstName;
+    public String lastName;
+    public Phone phone;
+    public Animal pet;
     private Car car;
     private Double salary = 3000.00;
+    public Double cash;
+
 
     public Double getSalary() {
         return salary;
@@ -47,6 +49,11 @@ public class Human extends Animal {
     public Human() {
         super("homo sapiens");
         this.weight = 80.0;
+        this.cash = 10000.0;
+    }
+
+    public void sell() throws Exception {
+        throw new Exception("You can't sell people");
     }
 
 }
