@@ -1,5 +1,6 @@
-package com.company;
+package com.company.creatures;
 
+import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -56,4 +57,8 @@ public class Human extends Animal {
         throw new Exception("You can't sell people");
     }
 
+    @Override
+    public void feed(Double foodWeight) {
+
+    }
 }

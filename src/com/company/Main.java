@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Human;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -7,35 +10,44 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Animal dog = new Animal("Dog");
+        Animal dog = new Animal("Dog") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
         dog.name = "Szarik";
 
         System.out.println("Hi, I'm " + dog.name);
 
-        dog.feed();
+
 
         Human me = new Human();
         me.firstName = "Adrian";
         me.lastName = "Warda";
         me.pet = dog;
 
-        me.pet.feed();
+
         System.out.println(me.pet.species);
 
-        me.pet = new Animal("Lion");
+        me.pet = new Animal("Lion") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
         me.pet.name = "Myszojeleń";
 
-        me.pet.feed();
 
         System.out.println(me.pet.species);
 
 
-        Animal cat = new Animal("cat");
-        cat.feed();
-        for (int i = 10; i < 14; i++) {
-            cat.takeForAWalk();
-        }
-        cat.feed();
+        Animal cat = new Animal("cat") {
+            @Override
+            public void feed(Double foodWeight) {
+
+            }
+        };
 
         me.setSalary(3500.0);
         System.out.println("Your salary after increase " + me.getSalary() +" New data has been sent to the accounting system ,remember to pick up the annex from the contract and do not hide the income zus already knows.");
@@ -65,6 +77,7 @@ public class Main {
         System.out.println(friend.getCar());
         System.out.println(friend.cash);
 
-
+        FarmAnimal horse = new FarmAnimal("horse");
+        horse.beEaten();
     }
 }

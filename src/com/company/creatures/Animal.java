@@ -1,36 +1,35 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Saleable;
 
 import java.io.File;
 
-public class Animal implements Saleable {
-    final String species;
-    String name;
+public abstract class Animal implements Saleable, Feedable {
+    public final String species;
+    public String name;
     File pic;
     protected Double weight;
 
-
     public Animal(String species) {
         this.species = species;
-        if (species == "Dog") {
-            weight = 10.0;
-        } else if (species == "Lion") {
-            weight = 180.0;
-        } else {
-            weight = 1.0;
+        this.weight = weight;
         }
 
+    public void feed() {
+        feed(1.0);
     }
 
-    void feed() {
+
+    public void feed(double foodWeight) {
         if (weight <= 0) {
             System.out.println("U can't feed dead pet");
         } else {
-            weight += 0.1;
-            System.out.println("Thx bro, my weight is now " + weight);
+            weight += foodWeight;
+            System.out.println("Thx bro, my weight is now " + this.weight);
         }
     }
 
-    void takeForAWalk() {
+    public void takeForAWalk() {
         if (weight <= 0) {
             System.out.println("U can't go for a walk with dead pet");
         } else {
