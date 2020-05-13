@@ -3,7 +3,7 @@ package com.company.devices;
 import com.company.creatures.Human;
 import com.company.Saleable;
 
-public class Car extends Device  implements Saleable {
+public abstract class Car extends Device  implements Saleable {
     String color;
     public String model;
     public String producer;
@@ -33,4 +33,6 @@ public class Car extends Device  implements Saleable {
             throw e;
         }
     }
+
+    abstract public void refuel();
 }

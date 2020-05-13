@@ -6,9 +6,11 @@ import com.company.creatures.Human;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+import java.net.MalformedURLException;
+
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, MalformedURLException {
 
         Animal dog = new Animal("Dog") {
             @Override
@@ -26,6 +28,7 @@ public class Main {
         me.firstName = "Adrian";
         me.lastName = "Warda";
         me.pet = dog;
+        me.phone = new Phone ("X","Apple",5.8);
 
 
         System.out.println(me.pet.species);
@@ -52,12 +55,22 @@ public class Main {
         me.setSalary(3500.0);
         System.out.println("Your salary after increase " + me.getSalary() +" New data has been sent to the accounting system ,remember to pick up the annex from the contract and do not hide the income zus already knows.");
 
-        me.setCar(new Car("Ford", "Focus"));
+        me.setCar(new Car("Ford", "Focus") {
+            @Override
+            public void refuel() {
+
+            }
+        });
         System.out.println(me.getCar().model + " " + me.getCar().producer);
 
         Phone phone = new Phone("X","Apple",5.8);
 
-        Car car = new Car("Focus","Ford");
+        Car car = new Car("Focus", "Ford") {
+            @Override
+            public void refuel() {
+
+            }
+        };
 
         System.out.println(dog);
         System.out.println(me);
@@ -79,5 +92,8 @@ public class Main {
 
         FarmAnimal horse = new FarmAnimal("horse");
         horse.beEaten();
+
+        me.phone.installAnApp("Messanger");
+        me.phone.installAnApp("Messanger","1.0.1");
     }
 }
