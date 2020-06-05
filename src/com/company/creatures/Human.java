@@ -9,7 +9,8 @@ public class Human extends Animal {
     public String lastName;
     public Phone phone;
     public Animal pet;
-    private Car car;
+    private static final Integer DEFAULT_GARAGE_SIZE = 2;
+    private Car[] garage;
     private Double salary = 3000.00;
     public Double cash;
 
@@ -27,20 +28,16 @@ public class Human extends Animal {
         }
     }
 
-    public Car getCar() {
-        return car;
+    public Car getCar(Integer index) {
+        return garage[index];
     }
 
-    public void setCar(Car car) {
-        if(car.value <= this.salary){
-            System.out.println("You bought car by cash");
-            this.car = car;
-        } else if (car.value <= this.salary * 12){
-            System.out.println("you bought car on credit");
-            this.car = car;
-        }else {
-            System.out.println("Sorry, find better job if you want car");
-        }
+    public void setCar(Car car, Integer index) {
+        this.garage[index] = car;
+    }
+
+    public Car[] getGarage() {
+        return this.garage;
     }
 
     public String toString(){
@@ -51,6 +48,15 @@ public class Human extends Animal {
         super("homo sapiens");
         this.weight = 80.0;
         this.cash = 10000.0;
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
+    }
+
+    public Human(Integer farmSize, Integer garageSize) {
+
+        super("homo sapiens");
+        this.weight = 80.0;
+        this.cash = 10000.0;
+        this.garage = new Car[garageSize];
     }
 
     public void sell() throws Exception {
@@ -60,5 +66,15 @@ public class Human extends Animal {
     @Override
     public void feed(Double foodWeight) {
 
+    }
+
+    public double valueOfCars() {
+        Double sum = 0.0;
+        for (Car car : garage) {
+            if (car != null) {
+                sum += car.value;
+            }
+        }
+        return sum;
     }
 }

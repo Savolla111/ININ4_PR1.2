@@ -38,7 +38,7 @@ public class Phone extends Device implements Saleable{
         }
     }
 
-    public void installAnApp(String appName) throws MalformedURLException {
+    /*public void installAnApp(String appName) throws MalformedURLException {
         this.installAnApp(appName, "latest");
     }
 
@@ -55,6 +55,6 @@ public class Phone extends Device implements Saleable{
         for (String appName : appNames) {
             installAnApp(appName);
         }
-    }
+    }*/
 }
 

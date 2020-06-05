@@ -55,13 +55,8 @@ public class Main {
         me.setSalary(3500.0);
         System.out.println("Your salary after increase " + me.getSalary() +" New data has been sent to the accounting system ,remember to pick up the annex from the contract and do not hide the income zus already knows.");
 
-        me.setCar(new Car("Ford", "Focus") {
-            @Override
-            public void refuel() {
 
-            }
-        });
-        System.out.println(me.getCar().model + " " + me.getCar().producer);
+        System.out.println(me.getCar(2).model + " " + me.getCar(2).producer);
 
         Phone phone = new Phone("X","Apple",5.8);
 
@@ -85,15 +80,15 @@ public class Main {
 
         cat.sell(me, friend, 999.0);
 
-        System.out.println(me.getCar());
+        System.out.println(me.getCar(2));
         System.out.println(me.cash);
-        System.out.println(friend.getCar());
+        System.out.println(friend.getCar(2));
         System.out.println(friend.cash);
 
         FarmAnimal horse = new FarmAnimal("horse");
         horse.beEaten();
 
-        me.phone.installAnApp("Messanger");
-        me.phone.installAnApp("Messanger","1.0.1");
+        /*me.phone.installAnApp("Messanger");
+        me.phone.installAnApp("Messanger","1.0.1");*/
     }
 }

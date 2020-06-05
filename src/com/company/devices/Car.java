@@ -24,9 +24,9 @@ public abstract class Car extends Device  implements Saleable {
     public void sell(Human seller, Human buyer, Double price) throws Exception {
         try {
             super.sell(seller, buyer, price);
-            buyer.setCar(this);
-            if (seller.getCar() == this) {
-                seller.setCar(null);
+            buyer.setCar(this,2);
+            if (seller.getCar(1) == this) {
+                seller.setCar(null,2);
             }
         } catch (Exception e) {
             System.out.println("transaction aborted");
