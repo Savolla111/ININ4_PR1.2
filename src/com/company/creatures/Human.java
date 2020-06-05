@@ -77,4 +77,14 @@ public class Human extends Animal {
         }
         return sum;
     }
+
+    public boolean isOwner(Car newCar) {
+        boolean isOwner = false;
+        for (Car car : garage) {
+            if (car == newCar) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
