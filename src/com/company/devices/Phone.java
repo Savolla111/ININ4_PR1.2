@@ -5,6 +5,8 @@ import com.company.Saleable;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Phone extends Device implements Saleable{
     Double screenSize;
@@ -37,6 +39,10 @@ public class Phone extends Device implements Saleable{
             throw e;
         }
     }
+
+    Set<Phone> applications = new HashSet<Phone>();
+    applications.add("Messanger");
+    applications.add("Bolt");
 
     /*public void installAnApp(String appName) throws MalformedURLException {
         this.installAnApp(appName, "latest");
